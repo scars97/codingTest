@@ -1,0 +1,40 @@
+package com.example.demo.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.mapper.LanguageMapper;
+import com.example.demo.model.Language;
+
+import lombok.RequiredArgsConstructor;
+
+@Repository
+@RequiredArgsConstructor
+public class LanguageRepository {
+
+	private final LanguageMapper mapper;
+	
+	public Language save(Language language) {
+		mapper.save(language);
+		return language;
+	}
+	
+	public Language update(Language language) {
+		mapper.update(language);
+		return language;
+	}
+	
+	public Optional<Language> findById(Integer languageId) {
+		return mapper.findById(languageId);
+	}
+
+	public List<Language> findAll() {
+		return mapper.findAll();
+	}
+
+	public void delete(Integer languageId) {
+		mapper.delete(languageId);
+	}
+}

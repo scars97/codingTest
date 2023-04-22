@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.example.demo.repository.LanguageRepository&apos; to &apos;LanguageRepositoryImpl&apos;&#x0D;&#x0A;- Original project: &apos;codingtest&apos;&#x0D;&#x0A;- Original element: &apos;com.example.demo.repository.LanguageRepository&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.demo.repository.LanguageRepositoryImpl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LanguageRepository&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.demo.repository{LanguageRepository.java[LanguageRepository" matchStrategy="1" name="LanguageRepositoryImpl" qualified="false" references="true" similarDeclarations="false" stamp="1682069716177" textual="false" version="1.0"/>
+</session>

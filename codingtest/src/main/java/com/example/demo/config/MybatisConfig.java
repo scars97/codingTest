@@ -1,0 +1,29 @@
+package com.example.demo.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.example.demo.mapper.LanguageMapper;
+import com.example.demo.repository.LanguageRepository;
+import com.example.demo.repository.LanguageRepositoryImpl;
+import com.example.demo.service.LanguageService;
+import com.example.demo.service.LanguageServiceImpl;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@RequiredArgsConstructor
+public class MybatisConfig {
+
+	private final LanguageMapper mapper;
+	
+	@Bean
+	public LanguageService languageService() {
+		return new LanguageServiceImpl(languageRepository());
+	}
+	
+	@Bean
+	public LanguageRepository languageRepository() {
+		return new LanguageRepositoryImpl(mapper);
+	}
+}
