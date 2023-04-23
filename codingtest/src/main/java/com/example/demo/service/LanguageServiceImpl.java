@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.Language;
 import com.example.demo.repository.LanguageRepository;
@@ -11,14 +12,15 @@ import com.example.demo.repository.LanguageRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class LanguageServiceImpl implements LanguageService{
 
 	private final LanguageRepository languageRepository;
 	
 	@Override
-	public Language save(Language language) {
-		return languageRepository.save(language);
+	public void save(Language language) {
+		languageRepository.save(language);
 	}
 
 	@Override

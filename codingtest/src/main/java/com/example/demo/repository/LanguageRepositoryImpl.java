@@ -11,7 +11,6 @@ import com.example.demo.model.Language;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class LanguageRepositoryImpl implements LanguageRepository{
@@ -19,9 +18,8 @@ public class LanguageRepositoryImpl implements LanguageRepository{
 	private final LanguageMapper mapper;
 	 
 	@Override
-	public Language save(Language language) {
-		mapper.save(language);
-		return language;
+	public void save(Language language) {
+		mapper.save(language); 
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ import com.example.demo.model.Language;
 
 public interface LanguageService {
 
-	Language save(Language language);
+	void save(Language language);
 
 	void update(Integer languageId, Language language);
 

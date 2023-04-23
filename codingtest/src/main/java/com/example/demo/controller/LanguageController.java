@@ -27,29 +27,28 @@ public class LanguageController {
 	
 	//Create
 	@PostMapping
-	public Language createLanguage(@RequestBody Language language) {
+	public void create(@RequestBody Language language) {
 		language = Language.builder()
 					.name(language.getName())
 					.build();
 		languageService.save(language);
-		return language;
 	}
 	
 	
 	//Read
 	@GetMapping("all")
-	public List<Language> findAllLanguage(){
+	public List<Language> findAll(){
 		return languageService.findAll();
 	}
 	
 	@GetMapping("{id}")
-	public Optional<Language> findOneLanguage(@PathVariable("id") Integer languageId) {
+	public Optional<Language> findOne(@PathVariable("id") Integer languageId) {
 		return languageService.findById(languageId);
 	}
 	
 	//Update
 	@PutMapping("{id}")
-	public void updateLanguage(@PathVariable("id") Integer languageId,
+	public void update(@PathVariable("id") Integer languageId,
 			@RequestBody Language language) {
 		language = Language.builder()
 				.name(language.getName())
@@ -59,7 +58,7 @@ public class LanguageController {
 
 	//Delete
 	@DeleteMapping("{id}")
-	public void deleteLanguage(@PathVariable("id") Integer languageId) {
+	public void delete(@PathVariable("id") Integer languageId) {
 		languageService.delete(languageId);
 	}
 	

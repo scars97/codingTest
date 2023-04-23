@@ -10,7 +10,7 @@ import com.example.demo.model.Language;
 @Mapper
 public interface LanguageMapper {
 
-	Language save(Language language);
+	void save(Language language);
 	
 	void update(Language language);
 	
