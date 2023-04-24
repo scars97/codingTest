@@ -9,7 +9,7 @@ public interface LanguageRepository {
 
 	void save(Language language);
 
-	void update(Integer languageId,Language language);
+	void update(Language language);
 
 	Optional<Language> findById(Integer langId);
 

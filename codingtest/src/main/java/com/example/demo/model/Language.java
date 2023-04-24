@@ -25,4 +25,11 @@ public class Language {
 		this.lastUpdate = Timestamp.valueOf(LocalDateTime.now());
 	}
 	
+	@Builder
+	public Language(Integer languageId, String name) {
+		this.languageId = languageId;
+		this.name = name;
+		this.lastUpdate = Timestamp.valueOf(LocalDateTime.now());
+	}
+	
 }

@@ -3,9 +3,9 @@ package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,9 +28,6 @@ public class LanguageController {
 	//Create
 	@PostMapping
 	public void create(@RequestBody Language language) {
-		language = Language.builder()
-					.name(language.getName())
-					.build();
 		languageService.save(language);
 	}
 	
@@ -47,12 +44,9 @@ public class LanguageController {
 	}
 	
 	//Update
-	@PutMapping("{id}")
+	@PatchMapping("{id}")
 	public void update(@PathVariable("id") Integer languageId,
 			@RequestBody Language language) {
-		language = Language.builder()
-				.name(language.getName())
-				.build();
 		languageService.update(languageId, language);
 	}
 

@@ -20,12 +20,19 @@ public class LanguageServiceImpl implements LanguageService{
 	
 	@Override
 	public void save(Language language) {
+		language = Language.builder()
+				.name(language.getName())
+				.build();
 		languageRepository.save(language);
 	}
 
 	@Override
 	public void update(Integer languageId, Language language) {
-		languageRepository.update(languageId, language);
+		language = Language.builder()
+					.languageId(languageId)
+					.name(language.getName())
+					.build();
+		languageRepository.update(language);
 	 
 	}
 

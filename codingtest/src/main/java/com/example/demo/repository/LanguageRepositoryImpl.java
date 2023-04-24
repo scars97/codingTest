@@ -23,12 +23,8 @@ public class LanguageRepositoryImpl implements LanguageRepository{
 	}
 	
 	@Override
-	public void update(Integer languageId, Language language) {
-		Language findOne = findById(languageId).orElseThrow();
-		findOne.setLanguageId(languageId);
-		findOne.setName(language.getName());
-		findOne.setLastUpdate(language.getLastUpdate());
-		mapper.update(findOne);
+	public void update(Language language) {
+		mapper.update(language);
 	}
 	
 	@Override
